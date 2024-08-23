@@ -21,11 +21,11 @@ form.addEventListener("input", throttle(save, 500));
 
 const loadFunction = () => {
 
-   const savedContent = localStorage.getItem("save");
+   const savedContent = localStorage.getItem("feedback-form-state");
    if (savedContent) {
-       const parsedState = JSON.parse(savedState);
-       emailInput.value = parsedState.email;
-        messageInput.value = parsedState.message;
+       const { email, message } = JSON.parse(savedContent);
+       emailInput.value = email;
+        messageInput.value = message;
     }
 }
        
@@ -43,4 +43,3 @@ const handleSubmit = (event) => {
 }
 
 form.addEventListener("submit", handleSubmit);
-
