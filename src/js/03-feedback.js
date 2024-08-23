@@ -40,6 +40,9 @@ const handleSubmit = (event) => {
     };
     console.log(feedbackFormState);
     localStorage.removeItem("feedback-form-state");
+     // Șterge valorile din inputuri
+    emailInput.value = "";
+    messageInput.value = "";
 }
 
 form.addEventListener("submit", handleSubmit);
